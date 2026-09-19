@@ -3,237 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Para Xiomara 🌻💛</title>
+  <title>Flores para mi enojona preferida</title>
   <style>
-    * {
-      box-sizing: border-box;
+    body {
       margin: 0;
       padding: 0;
-    }
-
-    body {
-      background: linear-gradient(135deg, #0d0d12 0%, #1a1a2e 100%);
-      color: #ffffff;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px 15px 50px 15px;
+      background-color: #0d1117;
+      color: #f0f6fc;
+      font-family: Arial, sans-serif;
+      text-align: center;
       overflow-x: hidden;
-      position: relative;
     }
-
-    /* Animación Lluvia de Flores */
-    .flower-rain {
+    .flowers-container {
       position: fixed;
-      top: -10%;
+      top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       pointer-events: none;
-      z-index: 1;
+      z-index: 10;
     }
-
     .flower {
       position: absolute;
-      top: -10%;
+      top: -50px;
       font-size: 24px;
-      user-select: none;
       animation: fall linear infinite;
     }
-
     @keyframes fall {
-      0% {
-        transform: translateY(0vh) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(115vh) rotate(360deg);
-        opacity: 0.3;
+      to {
+        transform: translateY(105vh) rotate(360deg);
       }
     }
-
     .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
       position: relative;
-      z-index: 2;
-      max-width: 500px;
-      width: 100%;
-      text-align: center;
+      z-index: 20;
     }
-
-    h1 {
-      color: #ffd700;
-      font-size: 2rem;
-      margin-bottom: 20px;
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-    }
-
-    /* Carta estilo tarjeta elegante */
     .card {
-      background: rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 215, 0, 0.3);
-      border-radius: 20px;
-      padding: 25px 20px;
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      background: rgba(22, 27, 34, 0.85);
+      border: 1px solid #30363d;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
       margin-bottom: 30px;
-      text-align: center;
+      backdrop-filter: blur(5px);
     }
-
-    .letter-text {
+    .card p {
       font-size: 1.15rem;
-      line-height: 1.8;
-      color: #fce38a;
-      white-space: pre-line;
-      min-height: 100px;
+      line-height: 1.6;
+      color: #ffe58f;
     }
-
-    .cursor {
-      display: inline-block;
-      width: 3px;
-      background-color: #ffd700;
-      animation: blink 0.7s infinite;
-      margin-left: 2px;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-
-    /* Galería de Fotos */
     .gallery-title {
-      color: #ffd700;
       font-size: 1.4rem;
+      color: #ffd700;
       margin-bottom: 15px;
-      text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
-      opacity: 0;
-      transition: opacity 1s ease-in;
     }
-
     .gallery {
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      opacity: 0;
-      transition: opacity 1.5s ease-in;
+      gap: 15px;
     }
-
-    .gallery-item {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      padding: 10px;
-      border: 1px solid rgba(255, 215, 0, 0.2);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      overflow: hidden;
-    }
-
     .gallery-item img {
       width: 100%;
-      height: auto;
-      border-radius: 10px;
-      display: block;
+      border-radius: 12px;
+      border: 2px solid #30363d;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       object-fit: cover;
-    }
-
-    .visible {
-      opacity: 1 !important;
     }
   </style>
 </head>
 <body>
 
-  <!-- Lluvia de Flores Amarillas -->
-  <div class="flower-rain" id="rainContainer"></div>
+  <div class="flowers-container" id="flowers"></div>
 
   <div class="container">
-    <h1>✨🌻 Feliz Día de las Flores Amarillas 🌻✨</h1>
-
     <div class="card">
-      <div class="letter-text" id="typewriterText"></div><span class="cursor" id="cursor"></span>
+      <p>Ese día le voy a pedir la mano a tus papás 💖 para traerte conmigo a México ✨. Yo me voy a encargar de apoyarte para que termines tus estudios 💜 y salgas adelante 💗.</p>
+      <p>Eres y siempre serás lo más especial para mí ✨💫.</p>
+      <p>Te amo 💛🌻💗</p>
     </div>
 
-    <h2 class="gallery-title" id="galleryTitle">📸 Para ti, mi niña hermosa 💖</h2>
-    
-    <div class="gallery" id="photoGallery">
+    <h2 class="gallery-title">📸 Para ti, mi niña hermosa 💗</h2>
+
+    <div class="gallery">
       <div class="gallery-item">
-        <img src="128272.png" alt="Xiomara">
+        <img src="IMG-20260915-WA0031.jpg" alt="Xiomara">
       </div>
       <div class="gallery-item">
-        <img src="128231.jpg" alt="Xiomara">
+        <img src="Screenshot_20260918_212530_Gallery.jpg" alt="Xiomara">
       </div>
       <div class="gallery-item">
-        <img src="116357.webp" alt="Xiomara">
+        <img src="a51423791dab46cfa6c4f5c0c5746f41.jpg" alt="Xiomara">
       </div>
     </div>
   </div>
 
   <script>
-    // Carta Completa
-    const textToType = `✨🌻 Feliz día de las flores amarillas, mi amor 💛✨
-
-Sé que la distancia nos separa ❤️ y que vivimos en países diferentes 🌎, que por ahora no podemos vernos como quisiéramos.
-
-Pero quiero que sepas que, aunque no te tenga cerca ✨, siempre te llevo en mi corazón 💭❤️ y en mi mente, porque eres la única a la que quiero amar 🌟👑.
-
-Cada mañana despierto pensando solo en ti 🌅🥰. Por las noches, cuando me duermo, sueño con que nos estamos casando 💍👰‍♀️🤵‍♂️ y formando nuestra propia familia 🏡💖.
-
-Soñar contigo es lo más bonito de mi día 🌙✨, y hasta cuando estoy en la escuela no dejo de pensar en ti 🤍 ni un solo segundo.
-
-Sé que ahorita cada quien está lejos 📍🧭, pero sé paciente: algún día, cuando ya estemos grandes ⏳✨, voy a ir a buscarte para visitarte 💞.
-
-Ese día le voy a pedir la mano a tus papás ❤️ para traerte conmigo a México ✨. Yo me voy a encargar de apoyarte para que termines tus estudios 💜 y salgas adelante 💗.
-
-Eres y siempre serás lo más especial para mí ✨💫.
-
-Te amo 💛🌻💖`;
-
-    // Efecto Lluvia de Flores
-    const rainContainer = document.getElementById('rainContainer');
-    const flowers = ['🌻', '🌼', '✨', '💛', '🌸'];
-
     function createFlower() {
       const flower = document.createElement('div');
       flower.classList.add('flower');
-      flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+      const items = ['🌻', '🌼', '💛', '💖', '✨'];
+      flower.innerText = items[Math.floor(Math.random() * items.length)];
       flower.style.left = Math.random() * 100 + 'vw';
-      flower.style.animationDuration = Math.random() * 3 + 4 + 's';
-      flower.style.fontSize = Math.random() * 15 + 18 + 'px';
-      rainContainer.appendChild(flower);
+      flower.style.animationDuration = Math.random() * 3 + 2 + 's';
+      flower.style.fontSize = Math.random() * 15 + 20 + 'px';
+      document.getElementById('flowers').appendChild(flower);
 
       setTimeout(() => {
         flower.remove();
-      }, 7000);
+      }, 5000);
     }
-
     setInterval(createFlower, 300);
-
-    // Efecto Máquina de Escribir para la Carta
-    let index = 0;
-    const speed = 45; // Velocidad de escritura en ms
-    const typewriterElement = document.getElementById('typewriterText');
-    const cursor = document.getElementById('cursor');
-    const galleryTitle = document.getElementById('galleryTitle');
-    const photoGallery = document.getElementById('photoGallery');
-
-    function typeWriter() {
-      if (index < textToType.length) {
-        typewriterElement.textContent += textToType.charAt(index);
-        index++;
-        setTimeout(typeWriter, speed);
-      } else {
-        cursor.style.display = 'none';
-        // Mostrar fotos cuando termina de escribir
-        galleryTitle.classList.add('visible');
-        photoGallery.classList.add('visible');
-      }
-    }
-
-    window.onload = () => {
-      setTimeout(typeWriter, 1000);
-    };
   </script>
 </body>
 </html>
+
 
