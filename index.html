@@ -101,45 +101,6 @@
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
     }
-
-    /* Galería de Fotos */
-    .gallery-title {
-      color: #ffd700;
-      font-size: 1.4rem;
-      margin-bottom: 15px;
-      text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
-      opacity: 0;
-      transition: opacity 1s ease-in;
-    }
-
-    .gallery {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      opacity: 0;
-      transition: opacity 1.5s ease-in;
-    }
-
-    .gallery-item {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      padding: 10px;
-      border: 1px solid rgba(255, 215, 0, 0.2);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      overflow: hidden;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      display: block;
-      object-fit: cover;
-    }
-
-    .visible {
-      opacity: 1 !important;
-    }
   </style>
 </head>
 <body>
@@ -153,20 +114,6 @@
     <div class="card">
       <div class="letter-text" id="typewriterText"></div><span class="cursor" id="cursor"></span>
     </div>
-
-    <h2 class="gallery-title" id="galleryTitle">📸 Para ti, mi niña hermosa 💖</h2>
-    
-    <div class="gallery" id="photoGallery">
-      <div class="gallery-item">
-        <img src="IMG-20260915-WA0031.jpg" alt="Xiomara">
-      </div>
-      <div class="gallery-item">
-        <img src="Screenshot_20260918_212530_Gallery.jpg" alt="Xiomara">
-      </div>
-      <div class="gallery-item">
-        <img src="a51423791dab46cfa6c4f5c0c5746f41.jpg" alt="Xiomara">
-      </div>
-    </div>
   </div>
 
   <script>
@@ -177,7 +124,7 @@ Sé que la distancia nos separa ❤️ y que vivimos en países diferentes 🌎,
 
 Pero quiero que sepas que, aunque no te tenga cerca ✨, siempre te llevo en mi corazón 💭❤️ y en mi mente, porque eres la única a la que quiero amar 🌟👑.
 
-Cada mañana despierto pensando solo en ti 🌅🥰. Por las noches, cuando me duermo, sueño con que nos estamos casando 💍👰‍♀️🤵‍♂️ y forming nuestra propia familia 🏡💖.
+Cada mañana despierto pensando solo en ti 🌅🥰. Por las noches, cuando me duermo, sueño con que nos estamos casando 💍👰‍♀️🤵‍♂️ y formando nuestra propia familia 🏡💖.
 
 Soñar contigo es lo más bonito de mi día 🌙✨, y hasta cuando estoy en la escuela no dejo de pensar en ti 🤍 ni un solo segundo.
 
@@ -214,8 +161,6 @@ Te amo 💛🌻💖`;
     const speed = 45; // Velocidad de escritura en ms
     const typewriterElement = document.getElementById('typewriterText');
     const cursor = document.getElementById('cursor');
-    const galleryTitle = document.getElementById('galleryTitle');
-    const photoGallery = document.getElementById('photoGallery');
 
     function typeWriter() {
       if (index < textToType.length) {
@@ -224,9 +169,6 @@ Te amo 💛🌻💖`;
         setTimeout(typeWriter, speed);
       } else {
         cursor.style.display = 'none';
-        // Mostrar fotos cuando termina de escribir
-        galleryTitle.classList.add('visible');
-        photoGallery.classList.add('visible');
       }
     }
 
@@ -237,4 +179,5 @@ Te amo 💛🌻💖`;
 </body>
 </html>
 
+    
 
