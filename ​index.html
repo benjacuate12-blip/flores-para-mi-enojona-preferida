@@ -3,171 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Acta de Matrimonio Oficial</title>
+  <title>Flores Amarillas 🌻</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
       margin: 0;
       padding: 0;
-      background: #111;
-      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #fff9c4, #fff176);
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-    }
-    .background-container {
-      position: relative;
-      width: 100%;
-      max-width: 480px;
-      min-height: 100vh;
-      background: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-    .overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.3);
-    }
-    .certificate-card {
-      position: relative;
-      z-index: 2;
-      background: rgba(253, 248, 240, 0.93);
-      border: 3px solid #d4af37;
-      outline: 2px solid #b8860b;
-      outline-offset: -8px;
-      border-radius: 12px;
-      padding: 30px 20px;
-      width: 100%;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+      overflow: hidden;
       text-align: center;
     }
-    .gold-header {
-      color: #7a0000;
-      font-size: 22px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin: 0 0 5px 0;
+
+    .container {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      max-width: 90%;
+      width: 400px;
+      z-index: 10;
+      position: relative;
+      backdrop-filter: blur(5px);
     }
-    .sub-header {
-      font-style: italic;
-      color: #555;
-      font-size: 13px;
-      margin-bottom: 20px;
-      border-bottom: 1px solid #d4af37;
-      padding-bottom: 10px;
+
+    h1 {
+      color: #f57f17;
+      font-size: 26px;
+      margin-bottom: 10px;
     }
-    .form-group {
-      margin-bottom: 15px;
-      text-align: left;
-    }
-    label {
-      display: block;
-      font-size: 12px;
-      font-weight: bold;
-      color: #333;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-    input[type="text"], input[type="date"] {
-      width: 100%;
-      padding: 10px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid #c5a059;
-      border-radius: 4px;
-      font-size: 14px;
-      color: #222;
-      font-family: inherit;
-    }
-    input:focus {
-      outline: none;
-      border-color: #7a0000;
-      box-shadow: 0 0 5px rgba(122, 0, 0, 0.3);
-    }
-    .btn-seal {
-      margin-top: 15px;
-      background: linear-gradient(135deg, #8b0000 0%, #4a0000 100%);
-      color: #fff;
-      border: 2px solid #d4af37;
-      padding: 12px;
-      width: 100%;
-      font-size: 14px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border-radius: 6px;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    .btn-seal:hover {
-      background: linear-gradient(135deg, #a00000 0%, #5c0000 100%);
-    }
-    #confirmation-message {
-      display: none;
-      margin-top: 15px;
-      padding: 15px;
-      background: rgba(122, 0, 0, 0.08);
-      border: 1px solid #8b0000;
-      border-radius: 6px;
-      color: #5a0000;
-      font-size: 14px;
+
+    p {
+      color: #5d4037;
+      font-size: 16px;
       line-height: 1.5;
-      font-weight: bold;
+    }
+
+    .flower-icon {
+      font-size: 60px;
+      margin: 15px 0;
+      animation: pulse 1.5s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.15); }
+    }
+
+    /* Animación de los elementos cayendo */
+    .falling-element {
+      position: absolute;
+      top: -50px;
+      font-size: 24px;
+      user-select: none;
+      pointer-events: none;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="background-container">
-    <div class="overlay"></div>
-
-    <div class="certificate-card">
-      <h1 class="gold-header">Acta de Matrimonio</h1>
-      <div class="sub-header">Documento Único de Posesión y Compromiso</div>
-
-      <form id="actaForm">
-        <div class="form-group">
-          <label for="esposo">Esposo (Propietario):</label>
-          <input type="text" id="esposo" placeholder="Tu nombre completo" required>
-        </div>
-
-        <div class="form-group">
-          <label for="esposa">Esposa (Completamente Mía):</label>
-          <input type="text" id="esposa" placeholder="Nombre completo de ella" required>
-        </div>
-
-        <div class="form-group">
-          <label for="fecha">Fecha de Unión Perpetua:</label>
-          <input type="date" id="fecha" required>
-        </div>
-
-        <div class="form-group">
-          <label for="promesa">Cláusula de Perttenencia:</label>
-          <input type="text" id="promesa" value="Pertenecerme por siempre y sin excusas" required>
-        </div>
-
-        <button type="submit" class="btn-seal">Sellar y Aceptar Compromiso</button>
-      </form>
-
-      <div id="confirmation-message">
-        Queda asentado de manera oficial e irrevocable: eres mía para siempre.
-      </div>
-    </div>
+  <div class="container">
+    <div class="flower-icon">🌻</div>
+    <h1>¡Feliz 21 de Septiembre!</h1>
+    <p>Para la persona más especial. Estas flores amarillas son un detalle para recordarte cuánto te quiero y lo importante que eres para mí. 💛</p>
   </div>
 
   <script>
-    document.getElementById('actaForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      document.getElementById('actaForm').style.display = 'none';
-      document.getElementById('confirmation-message').style.display = 'block';
-    });
+    // Arreglo con flores amarillas, corazones amarillos y rosas
+    const items = ['🌻', '💛', '🌸', '💖', '✨', '🌼'];
+
+    function createFallingItem() {
+      const element = document.createElement('div');
+      element.classList.add('falling-element');
+      
+      // Selecciona un ícono al azar de la lista
+      element.innerText = items[Math.floor(Math.random() * items.length)];
+      
+      // Posición horizontal aleatoria
+      element.style.left = Math.random() * 100 + 'vw';
+      
+      // Duración de la caída aleatoria (entre 3 y 6 segundos)
+      const duration = Math.random() * 3 + 3;
+      element.style.animationDuration = duration + 's';
+      
+      // Tamaño aleatorio
+      element.style.fontSize = (Math.random() * 15 + 15) + 'px';
+
+      document.body.appendChild(element);
+
+      // Eliminar el elemento después de que termine la animación
+      setTimeout(() => {
+        element.remove();
+      }, duration * 1000);
+    }
+
+    // Crear un elemento cayendo cada 300 milisegundos
+    setInterval(createFallingItem, 300);
   </script>
 
 </body>
 </html>
+
