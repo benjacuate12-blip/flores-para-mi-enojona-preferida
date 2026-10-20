@@ -3,175 +3,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Para Xiomara 🌻💛</title>
+  <title>Acta de Matrimonio Oficial</title>
   <style>
     * {
       box-sizing: border-box;
+    }
+    body {
       margin: 0;
       padding: 0;
-    }
-
-    body {
-      background: linear-gradient(135deg, #0d0d12 0%, #1a1a2e 100%);
-      color: #ffffff;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      min-height: 100vh;
+      background: #111;
+      font-family: 'Georgia', serif;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      padding: 20px 15px 50px 15px;
-      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    .background-container {
       position: relative;
-    }
-
-    /* Animación Lluvia de Flores */
-    .flower-rain {
-      position: fixed;
-      top: -10%;
-      left: 0;
       width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
+      max-width: 480px;
+      min-height: 100vh;
+      background: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
     }
-
-    .flower {
+    .overlay {
       position: absolute;
-      top: -10%;
-      font-size: 24px;
-      user-select: none;
-      animation: fall linear infinite;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
     }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(0vh) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(115vh) rotate(360deg);
-        opacity: 0.3;
-      }
-    }
-
-    .container {
+    .certificate-card {
       position: relative;
       z-index: 2;
-      max-width: 500px;
+      background: rgba(253, 248, 240, 0.93);
+      border: 3px solid #d4af37;
+      outline: 2px solid #b8860b;
+      outline-offset: -8px;
+      border-radius: 12px;
+      padding: 30px 20px;
       width: 100%;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
       text-align: center;
     }
-
-    h1 {
-      color: #ffd700;
-      font-size: 2rem;
+    .gold-header {
+      color: #7a0000;
+      font-size: 22px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 0 0 5px 0;
+    }
+    .sub-header {
+      font-style: italic;
+      color: #555;
+      font-size: 13px;
       margin-bottom: 20px;
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      border-bottom: 1px solid #d4af37;
+      padding-bottom: 10px;
     }
-
-    /* Carta estilo tarjeta elegante */
-    .card {
-      background: rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 215, 0, 0.3);
-      border-radius: 20px;
-      padding: 25px 20px;
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-      margin-bottom: 30px;
-      text-align: center;
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
     }
-
-    .letter-text {
-      font-size: 1.15rem;
-      line-height: 1.8;
-      color: #fce38a;
-      white-space: pre-line;
-      min-height: 100px;
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: bold;
+      color: #333;
+      text-transform: uppercase;
+      margin-bottom: 4px;
     }
-
-    .cursor {
-      display: inline-block;
-      width: 3px;
-      background-color: #ffd700;
-      animation: blink 0.7s infinite;
-      margin-left: 2px;
+    input[type="text"], input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #c5a059;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #222;
+      font-family: inherit;
     }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+    input:focus {
+      outline: none;
+      border-color: #7a0000;
+      box-shadow: 0 0 5px rgba(122, 0, 0, 0.3);
+    }
+    .btn-seal {
+      margin-top: 15px;
+      background: linear-gradient(135deg, #8b0000 0%, #4a0000 100%);
+      color: #fff;
+      border: 2px solid #d4af37;
+      padding: 12px;
+      width: 100%;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .btn-seal:hover {
+      background: linear-gradient(135deg, #a00000 0%, #5c0000 100%);
+    }
+    #confirmation-message {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      background: rgba(122, 0, 0, 0.08);
+      border: 1px solid #8b0000;
+      border-radius: 6px;
+      color: #5a0000;
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-  <!-- Lluvia de Flores Amarillas -->
-  <div class="flower-rain" id="rainContainer"></div>
+  <div class="background-container">
+    <div class="overlay"></div>
 
-  <div class="container">
-    <h1>✨🌻 Feliz Día de las Flores Amarillas 🌻✨</h1>
+    <div class="certificate-card">
+      <h1 class="gold-header">Acta de Matrimonio</h1>
+      <div class="sub-header">Documento Único de Posesión y Compromiso</div>
 
-    <div class="card">
-      <div class="letter-text" id="typewriterText"></div><span class="cursor" id="cursor"></span>
+      <form id="actaForm">
+        <div class="form-group">
+          <label for="esposo">Esposo (Propietario):</label>
+          <input type="text" id="esposo" placeholder="Tu nombre completo" required>
+        </div>
+
+        <div class="form-group">
+          <label for="esposa">Esposa (Completamente Mía):</label>
+          <input type="text" id="esposa" placeholder="Nombre completo de ella" required>
+        </div>
+
+        <div class="form-group">
+          <label for="fecha">Fecha de Unión Perpetua:</label>
+          <input type="date" id="fecha" required>
+        </div>
+
+        <div class="form-group">
+          <label for="promesa">Cláusula de Perttenencia:</label>
+          <input type="text" id="promesa" value="Pertenecerme por siempre y sin excusas" required>
+        </div>
+
+        <button type="submit" class="btn-seal">Sellar y Aceptar Compromiso</button>
+      </form>
+
+      <div id="confirmation-message">
+        Queda asentado de manera oficial e irrevocable: eres mía para siempre.
+      </div>
     </div>
   </div>
 
   <script>
-    // Carta Completa
-    const textToType = `✨🌻 Feliz Día de las Flores Amarillas, mi niña linda 💛✨
-
-Aunque hoy la distancia no nos deje estar juntos, quería hacerte sentir cerquita 🌎. Hoy es un día para recordarte lo bonito que se siente tenerte en mi vida y lo mucho que iluminas mis días ❤️.
-
-No importa lo que esté haciendo o si estoy en la escuela, siempre hay algo que me acuerda a ti y me saca una sonrisa 💭✨. Me llena el corazón de ilusión pensar en el futuro que nos espera y en el momento en que por fin podamos compartirlo todo juntos 🏡💖.
-
-Confía en que cada día falta menos para que vaya por ti, te abrace muy fuerte y pueda estar ahí a tu lado, apoyándote a cumplir cada uno de tus sueños y tus estudios 💗.
-
-Sé que a veces la distancia pesa, pero también nos enseña que lo nuestro es real y que vale la pena cada segundo de espera ✨. Gracias por tu cariño y por ser ese lugarcito seguro al que siempre quiero volver. Eres mi persona favorita y lo más bonito que me ha pasado 💫.
-
-Te amo con todo mi corazón 💛🌻💖`;
-
-    // Efecto Lluvia de Flores (Mantenido completamente intacto)
-    const rainContainer = document.getElementById('rainContainer');
-    const flowers = ['🌻', '🌼', '✨', '💛', '🌸'];
-
-    function createFlower() {
-      const flower = document.createElement('div');
-      flower.classList.add('flower');
-      flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
-      flower.style.left = Math.random() * 100 + 'vw';
-      flower.style.animationDuration = Math.random() * 3 + 4 + 's';
-      flower.style.fontSize = Math.random() * 15 + 18 + 'px';
-      rainContainer.appendChild(flower);
-
-      setTimeout(() => {
-        flower.remove();
-      }, 7000);
-    }
-
-    setInterval(createFlower, 300);
-
-    // Efecto Máquina de Escribir para la Carta
-    let index = 0;
-    const speed = 45; // Velocidad de escritura en ms
-    const typewriterElement = document.getElementById('typewriterText');
-    const cursor = document.getElementById('cursor');
-
-    function typeWriter() {
-      if (index < textToType.length) {
-        typewriterElement.textContent += textToType.charAt(index);
-        index++;
-        setTimeout(typeWriter, speed);
-      } else {
-        cursor.style.display = 'none';
-      }
-    }
-
-    window.onload = () => {
-      setTimeout(typeWriter, 1000);
-    };
+    document.getElementById('actaForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('actaForm').style.display = 'none';
+      document.getElementById('confirmation-message').style.display = 'block';
+    });
   </script>
+
 </body>
 </html>
+
 
 
 
