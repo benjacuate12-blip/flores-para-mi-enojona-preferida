@@ -32,12 +32,12 @@
     .overlay {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.4);
     }
     .certificate-card {
       position: relative;
       z-index: 2;
-      background: rgba(253, 248, 240, 0.93);
+      background: rgba(253, 248, 240, 0.95);
       border: 3px solid #d4af37;
       outline: 2px solid #b8860b;
       outline-offset: -8px;
@@ -85,11 +85,6 @@
       color: #222;
       font-family: inherit;
     }
-    input:focus {
-      outline: none;
-      border-color: #7a0000;
-      box-shadow: 0 0 5px rgba(122, 0, 0, 0.3);
-    }
     .btn-seal {
       margin-top: 15px;
       background: linear-gradient(135deg, #8b0000 0%, #4a0000 100%);
@@ -105,20 +100,45 @@
       cursor: pointer;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
-    .btn-seal:hover {
-      background: linear-gradient(135deg, #a00000 0%, #5c0000 100%);
-    }
-    #confirmation-message {
+
+    /* DISEÑO DE LA SEGUNDA PÁGINA (EL CERTIFICADO FINAL) */
+    #pagina-certificado {
       display: none;
-      margin-top: 15px;
-      padding: 15px;
-      background: rgba(122, 0, 0, 0.08);
-      border: 1px solid #8b0000;
-      border-radius: 6px;
-      color: #5a0000;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .cert-body {
       font-size: 14px;
-      line-height: 1.5;
+      color: #222;
+      line-height: 1.6;
+      margin: 20px 0;
+      text-align: justify;
+    }
+    .highlight-name {
+      color: #7a0000;
       font-weight: bold;
+      border-bottom: 1px dashed #7a0000;
+    }
+    .seal-mark {
+      margin: 20px auto 10px;
+      width: 70px;
+      height: 70px;
+      background: #8b0000;
+      color: #d4af37;
+      border: 2px dashed #d4af37;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
@@ -128,53 +148,86 @@
     <div class="overlay"></div>
 
     <div class="certificate-card">
-      <h1 class="gold-header">Acta de Matrimonio</h1>
-      <div class="sub-header">Documento Único de Posesión y Compromiso</div>
+      
+      <!-- PÁGINA 1: FORMULARIO -->
+      <div id="pagina-formulario">
+        <h1 class="gold-header">Acta de Matrimonio</h1>
+        <div class="sub-header">Registro de Datos Oficiales</div>
 
-      <form id="actaForm">
-        <div class="form-group">
-          <label for="esposo">Esposo (Propietario):</label>
-          <input type="text" id="esposo" placeholder="Tu nombre completo" required>
-        </div>
+        <form id="actaForm">
+          <div class="form-group">
+            <label for="esposo">Nombre del Esposo:</label>
+            <input type="text" id="esposo" placeholder="Nombre completo" required>
+          </div>
 
-        <div class="form-group">
-          <label for="esposa">Esposa (Completamente Mía):</label>
-          <input type="text" id="esposa" placeholder="Nombre completo de ella" required>
-        </div>
+          <div class="form-group">
+            <label for="esposa">Nombre de la Esposa:</label>
+            <input type="text" id="esposa" placeholder="Nombre completo" required>
+          </div>
 
-        <div class="form-group">
-          <label for="fecha">Fecha de Unión Perpetua:</label>
-          <input type="date" id="fecha" required>
-        </div>
+          <div class="form-group">
+            <label for="fecha">Fecha de Unión:</label>
+            <input type="date" id="fecha" required>
+          </div>
 
-        <div class="form-group">
-          <label for="promesa">Cláusula de Perttenencia:</label>
-          <input type="text" id="promesa" value="Pertenecerme por siempre y sin excusas" required>
-        </div>
+          <div class="form-group">
+            <label for="promesa">Cláusula Principal:</label>
+            <input type="text" id="promesa" value="Pertenecerme por siempre y sin excusas" required>
+          </div>
 
-        <button type="submit" class="btn-seal">Sellar y Aceptar Compromiso</button>
-      </form>
-
-      <div id="confirmation-message">
-        Queda asentado de manera oficial e irrevocable: eres mía para siempre.
+          <button type="submit" class="btn-seal">Generar Certificado Oficial</button>
+        </form>
       </div>
+
+      <!-- PÁGINA 2: DOCUMENTO FINAL EDITADO -->
+      <div id="pagina-certificado">
+        <h1 class="gold-header">Certificado Oficial</h1>
+        <div class="sub-header">Documento Único e Irrevocable</div>
+
+        <div class="cert-body">
+          Por medio del presente documento, se hace constar formalmente la unión perpetua entre 
+          <span class="highlight-name" id="res-esposo"></span> y 
+          <span class="highlight-name" id="res-esposa"></span>.
+          <br><br>
+          Queda registrado que desde la fecha <span class="highlight-name" id="res-fecha"></span>, ambos aceptan la siguiente condición permanente:
+          <br><br>
+          <i>"<span id="res-promesa"></span>"</i>
+        </div>
+
+        <div class="seal-mark">
+          Oficial<br>Sello
+        </div>
+
+        <p style="font-size: 12px; color: #7a0000; font-weight: bold; margin-top: 15px;">
+          Queda asentado de manera irrevocable: eres mía para siempre. ❤️
+        </p>
+      </div>
+
     </div>
   </div>
 
   <script>
     document.getElementById('actaForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      document.getElementById('actaForm').style.display = 'none';
-      document.getElementById('confirmation-message').style.display = 'block';
+      
+      // Obtener datos
+      const esposo = document.getElementById('esposo').value;
+      const esposa = document.getElementById('esposa').value;
+      const fecha = document.getElementById('fecha').value;
+      const promesa = document.getElementById('promesa').value;
+
+      // Colocar datos en la segunda página
+      document.getElementById('res-esposo').innerText = esposo;
+      document.getElementById('res-esposa').innerText = esposa;
+      document.getElementById('res-fecha').innerText = fecha;
+      document.getElementById('res-promesa').innerText = promesa;
+
+      // Cambiar de pantalla
+      document.getElementById('pagina-formulario').style.display = 'none';
+      document.getElementById('pagina-certificado').style.display = 'block';
     });
   </script>
 
 </body>
 </html>
-
-
-
-
-
-    
 
